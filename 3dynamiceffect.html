@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple CSS Animation</title>
+    <style>
+        body {
+            background: #f0f0f0;
+        }
+
+        #layer1 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transition: all 0.8s ease;
+            /* smooth effect */
+        }
+
+        #layer1:hover {
+            transform: translateX(150px) translateY(100px) scale(1.2);
+            /* move + resize */
+        }
+
+        #box {
+            background-color: black;
+            color: white;
+            width: 120px;
+            height: 120px;
+            /* border-radius: 50%; makes it round like a ball */
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layer1">
+        <div id="box">box1</div>
+        <!-- <img src="ball.jpg" alt="Ball Image" /> -->
+    </div>
+</body>
+
+</html>

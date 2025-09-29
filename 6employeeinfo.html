@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Salary</title>
+    <script>
+        function calcPay() {
+            let basic = parseInt(document.getElementById("basic").value);
+            let da = 0.4 * basic;
+            let hra = 0.2 * basic;
+            let pf = 0.12 * basic;
+            let tax = 0.1 * basic;
+            let gross = basic + da + hra;
+            let deduction = pf + tax;
+            let net = gross - deduction;
+            document.getElementById("output").innerText =
+                "Gross: " + gross + " | Deduction: " + deduction + " | Net: " + net;
+        }
+    </script>
+</head>
+
+<body>
+    Basic Pay: <input type="text" id="basic">
+    <input type="button" value="Calculate" onclick="calcPay()">
+    <p id="output"></p>
+</body>
+
+</html>

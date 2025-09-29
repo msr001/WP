@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sum of N</title>
+    <script>
+        function sumN() {
+            let n = parseInt(document.getElementById("num").value);
+            let sum = 0;
+            for (let i = 1; i <= n; i++) sum += i;
+            document.getElementById("result").innerText = "Sum = " + sum;
+        }
+    </script>
+</head>
+
+<body>
+    Enter N: <input type="text" id="num">
+    <input type="button" value="Find Sum" onclick="sumN()">
+    <p id="result"></p>
+</body>
+
+</html>

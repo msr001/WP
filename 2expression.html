@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Expression Evaluator</title>
+    <script>
+        function evaluateExp() {
+            let exp = document.getElementById("expr").value;
+            let result = eval(exp);
+            document.getElementById("output").innerText = "Result: " + result;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter Expression: <input type="text" id="expr">
+        <input type="button" value="Evaluate" onclick="evaluateExp()">
+    </form>
+    <p id="output"></p>
+</body>
+
+</html>
