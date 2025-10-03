@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Employee Information</h3>
+  <form id="empForm">
+    Name: <input id="name"><br><br>
+    Basic Pay: <input type="number" id="basic"><br><br>
+    <button type="submit">Calculate</button>
+  </form>
+
+  <pre id="result"></pre>
+
+  <script>
+    document.getElementById("empForm").onsubmit = e => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const basic = +document.getElementById("basic").value;
+
+      const da = 0.1 * basic, hra = 0.2 * basic, pf = 0.05 * basic, tax = 0.1 * basic;
+      const gross = basic + da + hra;
+      const deduction = pf + tax;
+      const net = gross - deduction;
+
+      document.getElementById("result").innerText =
+        `Name: ${name}
+         Basic: ${basic}
+         DA: ${da}
+         HRA: ${hra}
+         PF: ${pf}
+         TAX: ${tax}
+         Gross Pay: ${gross}
+         Deduction: ${deduction}
+         Net Pay: ${net}`;
+    }
+  </script>
+</body>
+</html>

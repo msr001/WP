@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Student Information</h3>
+  <form id="studentForm">
+    Name: <input type="text" id="name"><br><br>
+    Mark 1: <input type="number" id="m1"><br>
+    Mark 2: <input type="number" id="m2"><br>
+    Mark 3: <input type="number" id="m3"><br><br>
+    <button type="submit">Calculate</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("studentForm").onsubmit = function(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const m1 = +document.getElementById("m1").value;
+      const m2 = +document.getElementById("m2").value;
+      const m3 = +document.getElementById("m3").value;
+
+      const total = m1 + m2 + m3;
+      const avg = total / 3;
+      const grade = avg >= 90 ? "A" : avg >= 75 ? "B" : avg >= 60 ? "C" : avg >= 50 ? "D" : "F";
+      const res = avg >= 50 ? "Pass" : "Fail";
+
+      document.getElementById("result").innerText =
+        `Name: ${name}\nTotal: ${total}\nAverage: ${avg}\nResult: ${res}\nGrade: ${grade}`;
+    }
+  </script>
+</body>
+</html>

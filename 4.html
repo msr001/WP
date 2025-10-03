@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Sum of N Natural Numbers</h3>
+  <input type="number" id="n" placeholder="Enter n">
+  <button onclick="calSum()">Calculate Sum</button>
+  <p id="result"></p>
+
+  <script>
+    function calSum() {
+      let n = parseInt(document.getElementById("n").value);
+      let sum = (n*(n + 1))/2;
+      document.getElementById("result").innerText = "Sum: " + sum;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p id="day"></p>
+  <p id="month"></p>
+  <p id="date"></p>
+  <p id="year"></p>
+
+  <script>
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    
+    const d = new Date();
+    document.getElementById("day").innerText = "Day: " + days[d.getDay()];
+    document.getElementById("month").innerText = "Month: " + months[d.getMonth()];
+    document.getElementById("date").innerText = "Date: " + d.getDate();
+    document.getElementById("year").innerText = "Year: " + d.getFullYear();
+  </script>
+</body>
+</html>

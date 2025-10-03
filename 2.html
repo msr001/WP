@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Math Expression Evaluator</h3>
+
+  <input type="text" id="expr" placeholder="e.g. 2+3*4">
+  <button onclick="calc()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    function calc() {
+      let exp = document.getElementById("expr").value;
+      if (exp.trim() === "") return alert("Enter an expression");
+      try {
+        let res = eval(exp); // evaluate expression
+        document.getElementById("result").innerText = "Result: " + res;
+      } catch {
+        alert("Invalid expression");
+      }
+    }
+  </script>
+</body>
+</html>
+

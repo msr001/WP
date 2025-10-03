@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form id="form">
+    Name: <input type="text" id="name"><br><br>
+
+    Gender:
+    <input type="radio" id="male" name="gender"> Male
+    <input type="radio" id="female" name="gender"> Female
+    <br><br>
+
+    <input type="checkbox" id="terms"> Accept terms
+    <br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("form").onsubmit = function(e) {
+      e.preventDefault();
+
+      if (document.getElementById("name").value.trim() === "")
+        return alert("Enter your name");
+
+      if (!document.getElementById("male").checked &&
+          !document.getElementById("female").checked)
+        return alert("Select gender");
+
+      if (!document.getElementById("terms").checked)
+        return alert("Accept the terms");
+
+      alert("Form submitted!");
+    };
+  </script>
+</body>
+</html>
